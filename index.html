@@ -1,5 +1,44 @@
 ---
 layout: default
-title: Homepage
+title: Home Page
+news:
+ - title: Big Sale
+   description: Something wicked this way comes!
+   date: 13th Jan
+   category: Promo
+   url: https://www.sale.com
+ - title: New Breed Incoming
+   description: Biggest discovery of the century!
+   date: 30th Feb
+   category: Science
+   url: https://www.science.com
+ - title: Coffee is Life
+   description: The addiction we craved!
+   date: 7th Dec
+   category: Food
+   url: https://www.foodie.com
+ - title: Walk a Mile...
+   description: Join the end-of-the-year event with us!
+   date: 23th Dec
+   category: Health
+   url: https://www.health.com
 ---
-<h1>Welcome to your homepage!</h1>
+
+<section class="grid-spaceBetween padded mob-padded-0 bg-featured latest-news">
+
+    {% for item in page.news %}
+      <!-- First Card   -->
+      <div class="col-3_xs-7 card">
+          <div class="bg-image portrait">
+            <span> {{item.category}} </span>  
+          </div> 
+          <div class="post-info"> 
+            <p class="date"> {{item.date}} </p> 
+            <h3> {{item.title}} </h3> 
+            <p> {{item.description}} </p> 
+            <a href="{{item.url}}"> Find out more &nbsp; &#10141;</a>
+          </div>
+      </div>
+    {% endfor %}
+  
+</section> 
